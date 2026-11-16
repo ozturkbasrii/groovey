@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>Groovey</title>
+    <link>https://github.com/ozturkbasrii/groovey</link>
+    <item>
+      <title>Groovey 0.1.0</title>
+      <pubDate>Mon, 16 Nov 2026 12:56:06 +0000</pubDate>
+      <sparkle:version>1</sparkle:version>
+      <sparkle:shortVersionString>0.1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <sparkle:releaseNotesLink>https://github.com/ozturkbasrii/groovey/releases/tag/v0.1.0</sparkle:releaseNotesLink>
+      <enclosure url="https://github.com/ozturkbasrii/groovey/releases/download/v0.1.0/Groovey-0.1.0.dmg" type="application/octet-stream" sparkle:edSignature="iUDsACBwgyS5f/0bG/6PAF/zAn9NFGN3kRCJAtZdLAsFucHb2DVMV/RO1DCE/RT5y0YfDncFoue00VQgc2BADw==" length="2286960" />
+    </item>
+  </channel>
+</rss>
