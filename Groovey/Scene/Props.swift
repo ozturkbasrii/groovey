@@ -56,7 +56,9 @@ struct CoverStand: View {
                     .strokeBorder(.white.opacity(0.12), lineWidth: 1)
             }
             .frame(width: Self.sleeveSide + 44, height: 26)
-            .shadow(color: .black.opacity(0.55), radius: 10, y: 8)
+            .overlay(WoodGrain(lines: 14, seed: 0x7C3, strength: 1.5).clipShape(RoundedRectangle(cornerRadius: 5)))
+            .shadow(color: .black.opacity(0.7), radius: 5, y: 5)
+            .shadow(color: .black.opacity(0.45), radius: 22, y: 14)
             .zIndex(2)
         }
     }
@@ -102,7 +104,7 @@ struct Lamp: View {
     var body: some View {
         let brass = LinearGradient(colors: [Color(hex: 0xD9B46A), Color(hex: 0x7A5A22)], startPoint: .leading, endPoint: .trailing)
         ZStack(alignment: .bottom) {
-            Ellipse().fill(.black.opacity(0.5)).frame(width: 170, height: 30).blur(radius: 10).offset(y: 10)
+            Ellipse().fill(.black.opacity(0.7)).frame(width: 150, height: 22).blur(radius: 6).offset(y: 8)
             Ellipse().fill(brass).frame(width: 128, height: 30)
             Rectangle().fill(brass).frame(width: 12, height: 190).offset(y: -16)
             DomeShape()
@@ -113,6 +115,26 @@ struct Lamp: View {
                     ],
                     startPoint: .top, endPoint: .bottom
                 ))
+                // Ribbed glass: alternating bright and dark flutes.
+                .overlay(
+                    HStack(spacing: 0) {
+                        ForEach(0..<18, id: \.self) { _ in
+                            LinearGradient(
+                                colors: [.black.opacity(0.16), .white.opacity(0.10 + 0.22 * brightness), .black.opacity(0.16)],
+                                startPoint: .leading, endPoint: .trailing
+                            )
+                        }
+                    }
+                    .clipShape(DomeShape())
+                )
+                // The bulb, glowing through the glass.
+                .overlay(
+                    RadialGradient(
+                        colors: [Color.white.opacity(0.85 * brightness), glow.opacity(0.35 * brightness), .clear],
+                        center: UnitPoint(x: 0.5, y: 0.72), startRadius: 2, endRadius: 85
+                    )
+                    .clipShape(DomeShape())
+                )
                 .overlay(DomeShape().stroke(.black.opacity(0.18), lineWidth: 1))
                 .frame(width: 210, height: 150)
                 .shadow(color: glow.opacity(0.7 * brightness), radius: 30)

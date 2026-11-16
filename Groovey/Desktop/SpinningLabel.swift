@@ -12,8 +12,9 @@ final class SpinningLabelView: NSView {
     private let spindle = CALayer()
     private var spinning = false
 
-    /// Seconds per turn at 33⅓ rpm.
-    private static let period: CFTimeInterval = 1.8
+    /// Seconds per turn. A real record takes 1.8 s (33⅓ rpm), which looks frantic on a wallpaper,
+    /// so this turns at about a third of that speed.
+    private static let period: CFTimeInterval = 5.5
 
     override init(frame: NSRect) {
         super.init(frame: frame)

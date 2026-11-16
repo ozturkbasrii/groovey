@@ -39,17 +39,39 @@ enum TonearmGeometry {
 /// Drawn pointing along +x from its centre, then rotated about the pivot.
 struct TonearmView: View {
     let angle: Double
+    /// Height of the arm above the plate, in plate units. Drawn as an upward shift, which is how
+    /// height shows once the plate is foreshortened. Zero for a view from straight above.
+    var lift: CGFloat = 0
 
     private let length = TonearmGeometry.length
 
     var body: some View {
+        let radians = angle * .pi / 180
+        // Where the cartridge sits, measured from the pivot.
+        let head = CGPoint(x: (length - 12) * CGFloat(Darwin.cos(radians)), y: (length - 12) * CGFloat(Darwin.sin(radians)))
+
         ZStack {
             pivotBase
+            if lift > 0 {
+                // Bearing pillar.
+                Capsule()
+                    .fill(LinearGradient(colors: [Color(white: 0.5), Color(white: 0.16), Color(white: 0.3)], startPoint: .leading, endPoint: .trailing))
+                    .frame(width: 34, height: lift + 34)
+                    .offset(y: -lift / 2)
+            }
             // The arm floats above the plate, so its shadow falls a little towards the viewer.
             armShadow
                 .rotationEffect(.degrees(angle))
                 .offset(x: 5, y: 18)
+            if lift > 0 {
+                // Cartridge, reaching from the headshell down to the groove.
+                RoundedRectangle(cornerRadius: 3)
+                    .fill(LinearGradient(colors: [Color(white: 0.2), Color(white: 0.04)], startPoint: .top, endPoint: .bottom))
+                    .frame(width: 22, height: lift + 6)
+                    .offset(x: head.x, y: head.y - lift / 2)
+            }
             arm.rotationEffect(.degrees(angle))
+                .offset(y: -lift)
         }
         .frame(width: (length + 90) * 2, height: (length + 90) * 2)
     }
