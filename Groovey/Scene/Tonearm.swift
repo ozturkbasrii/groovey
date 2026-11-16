@@ -29,8 +29,10 @@ enum TonearmGeometry {
     }
 
     static func stylus(atAngle degrees: Double) -> CGPoint {
-        let radians = degrees * .pi / 180
-        return CGPoint(x: pivot.x + length * cos(radians), y: pivot.y + length * sin(radians))
+        let radians: Double = degrees * .pi / 180
+        let dx = CGFloat(Double(length) * Darwin.cos(radians))
+        let dy = CGFloat(Double(length) * Darwin.sin(radians))
+        return CGPoint(x: pivot.x + dx, y: pivot.y + dy)
     }
 }
 
