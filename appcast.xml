@@ -4,13 +4,13 @@
     <title>Groovey</title>
     <link>https://github.com/ozturkbasrii/groovey</link>
     <item>
-      <title>Groovey 0.2.0</title>
-      <pubDate>Mon, 16 Nov 2026 14:16:31 +0000</pubDate>
-      <sparkle:version>5</sparkle:version>
-      <sparkle:shortVersionString>0.2.0</sparkle:shortVersionString>
+      <title>Groovey 0.3.0</title>
+      <pubDate>Tue, 17 Nov 2026 08:18:06 +0000</pubDate>
+      <sparkle:version>7</sparkle:version>
+      <sparkle:shortVersionString>0.3.0</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-      <sparkle:releaseNotesLink>https://github.com/ozturkbasrii/groovey/releases/tag/v0.2.0</sparkle:releaseNotesLink>
-      <enclosure url="https://github.com/ozturkbasrii/groovey/releases/download/v0.2.0/Groovey-0.2.0.dmg" type="application/octet-stream" sparkle:edSignature="yJyDefOQ/X2swk3yhPOt7O0fzugWQJ0Dn8gXK/7sHTx2fRosnbYd4+lJnm9SE0V5uCMjFmFdGC8FiFZp4EWBBQ==" length="2330540" />
+      <sparkle:releaseNotesLink>https://github.com/ozturkbasrii/groovey/releases/tag/v0.3.0</sparkle:releaseNotesLink>
+      <enclosure url="https://github.com/ozturkbasrii/groovey/releases/download/v0.3.0/Groovey-0.3.0.dmg" type="application/octet-stream" sparkle:edSignature="sf0mFsEdSz9wDL2p6ZXyFrX2LFMH+CHgdOIrB8kwxxMKIMqvJWI2c/59Hn+V4YGsXkisEmrDv2Gfd0HR2bM6BQ==" length="2230382" />
     </item>
   </channel>
 </rss>
