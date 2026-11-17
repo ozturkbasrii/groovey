@@ -30,11 +30,7 @@ Requires macOS 14 Sonoma or later (Apple Silicon or Intel).
 2. Open it and drag **Groovey** into **Applications**.
 3. Open Groovey. It appears as a disc icon in the menu bar.
 
-Groovey is not notarized by Apple yet, so the first launch needs one extra step. macOS will say it cannot verify the app; open **System Settings → Privacy & Security**, scroll down, and click **Open Anyway**. Or run this once in Terminal:
-
-```bash
-xattr -dr com.apple.quarantine /Applications/Groovey.app
-```
+Groovey is signed with a Developer ID and notarized by Apple, so it opens without warnings. Version 0.2.0 and earlier were not; if you still have one of those, download the latest release once by hand, since they cannot update themselves to it.
 
 ## Build from source
 
@@ -89,7 +85,7 @@ scripts/             build, DMG, release and icon scripts
 
 Groovey, dinlediğin müziği masaüstünde bir pikap sahnesi olarak gösteren ücretsiz ve açık kaynak bir macOS uygulamasıdır. Duvar kâğıdının üstünde, masaüstü simgelerinin altında durur. Albüm kapağı standa konur, plağın etiketi döner, pikap kolu şarkının ilerleyişini izler ve son dinlediğin albümler masada birikir.
 
-**Kurulum:** [Son sürümden](https://github.com/ozturkbasrii/groovey/releases/latest) DMG dosyasını indir, Groovey'yi Uygulamalar klasörüne sürükle ve aç. Uygulama henüz Apple tarafından noter onayından geçmediği için ilk açılışta **Sistem Ayarları → Gizlilik ve Güvenlik** bölümünden **Yine de Aç** demen gerekir.
+**Kurulum:** [Son sürümden](https://github.com/ozturkbasrii/groovey/releases/latest) DMG dosyasını indir, Groovey'yi Uygulamalar klasörüne sürükle ve aç. Uygulama Developer ID ile imzalı ve Apple'ın noter onayından geçmiş olduğu için uyarısız açılır. 0.2.0 ve öncesini kurduysan son sürümü bir kez elle indirmen gerekir, çünkü o sürümler kendilerini otomatik güncelleyemez.
 
 Spotify, Apple Music ve Denetim Merkezi'ndeki "Şu An Çalan" bölümünde görünen tüm uygulamalarla çalışır. Hesap, reklam ya da veri toplama yoktur.
 
